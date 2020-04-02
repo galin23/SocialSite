@@ -1,5 +1,12 @@
 # Development
+This project is powered by Docker. To run it follow the instructions bellow:
+
 ```
+## Run the containers
 docker-compose up -d
+
+## Execute migrations
+docker-compose exec web python manage.py migrate
 ```
-http://localhost:8000/
+
+Web site should be accessible at: http://localhost:8000/
