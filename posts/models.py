@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 
-# pip install misaka
 import misaka
 
 from groups.models import Group

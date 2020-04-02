@@ -1,6 +1,9 @@
 body {
   margin: 0;
-  overflow: hidden;
-  background-color: black;
-  color:white;
+  background-color: rgb(241, 241, 241);
+  color:rgb(30, 30, 41);
+}
+
+.mycontent {
+  padding-top: 2em;
 }
