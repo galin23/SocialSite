@@ -3,19 +3,14 @@
 {% block pregroup %}
 <div class="col-md-4">
 	<div class="content">
-		{% if user.is_authenticated %}
-		<h2>
-			Welcome back
-			<a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
-		</h2>
+		<h2>Groups</h2>
 
-    {% endif %}
-			<h2>Groups</h2>
-
-			<p>Welcome to the Groups Page! <br>Select a Group with a shared interest!</p>
+		<p>Welcome to the Groups page. Select a Group with a shared interest or create a new one!</p>
 	</div>
 	{% if user.is_authenticated %}
-	<a href="{% url 'groups:create' %}" class="btn btn-primary" role="button"><span class="fa fa-plus"></span> Create New Group!</a>
+	<a href="{% url 'groups:create' %}" class="btn btn-primary" role="button">
+		<span class="fa fa-plus"></span> New Group
+	</a>
 	{% endif %}
 </div>
 {% endblock %}
@@ -27,11 +22,10 @@
 		<a href="{% url 'groups:single' slug=group.slug %}"
 			class="list-group-item list-group-item-action flex-column align-items-start">
 			<div class="d-flex justify-content-between">
-				<div>
-					<h3 class="mb-1">{{ group.name }}</h3>
-					<p class="mb-1">{{ group.description_html|safe }}</p>
+				<div class="w-50">
+					<h3>{{ group.name }}</h3>
 				</div>
-		
+
 				<div class="row">
 					<div class="text-muted d-flex col w-100 flex-column align-items-center">
 						<span class="badge badge-secondary py-3 px-4">
@@ -50,8 +44,9 @@
 						</div>
 					</div>
 				</div>
-		
 			</div>
+
+			<p class="mb-1">{{ group.description_html|safe }}</p>
 		</a>
 
 		{% endfor %}
