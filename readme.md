@@ -1,4 +1,6 @@
-# Development
+# Simple Social
+Available online at: http://galin23.pythonanywhere.com/
+
 This project is powered by Docker. To run it follow the instructions bellow:
 
 ```
